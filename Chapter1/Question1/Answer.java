@@ -12,7 +12,7 @@ public class Answer {
         for(int i = 0; i<word.length(); i++) {
             int character = word.charAt(i) - 'a';
             if((unique & (1<<character)) > 0)  return false;
-            unique |= (1 << character);
+            unique = unique | (1 << character);
         }
         return true;
     }
@@ -28,7 +28,7 @@ public class Answer {
     }
 
     public static void main(String[] args) {
-        String[] words = {"abcde", "hello", "apple", "kite", "padle"};
+        String[] words = {"abcde", "hello", "apple", "kite", "padle"};;
         for (String word : words) {
             System.out.println(word + ": " + isUniqueChars(word) + " " + isUniqueChars2(word));
         }
