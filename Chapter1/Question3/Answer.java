@@ -13,7 +13,7 @@ public class Answer{
         }
         int len = arr.length;
         if (len < 2) {
-            return null;
+            return String.valueOf(arr[0]);
         }
         StringBuilder uniqueSentence = new StringBuilder();
         for(char element : arr) {

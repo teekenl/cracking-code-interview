@@ -5,18 +5,25 @@ public class Answer{
 
     }
 
-    public static void reverseString(char[] str){
+    public static String reverseString(char[] str){
         if(str == null){
-            return;
+            return null;
         }
         int len = str.length;
         if(len<2) {
-            return;
+            return String.valueOf(str[0]);
         }
-        int tail = 1;
+
+        StringBuilder reversed = new StringBuilder();
+        for(int i=len-1; i>=0; i--) {
+            reversed.append(str[i]);
+        }
+        return reversed.toString();
     }
 
     public static void main(String[] args) {
-
+        String test = "iloveyou";
+        char[] arr = test.toCharArray();
+        System.out.println(reverseString(arr));
     }
 }
