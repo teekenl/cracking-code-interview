@@ -5,7 +5,7 @@ public class Answer{
 
     }
 
-    public static String reverseString(char[] str){
+    private static String reverseString(char[] str){
         if(str == null){
             return null;
         }
