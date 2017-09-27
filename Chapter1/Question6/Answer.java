@@ -13,19 +13,11 @@ public class Answer {
             int last = n - 1 - layer;
             for(int i = first; i < last; ++i) {
                 int offset = i - first;
-                int top = matrix[first][i]; // save top
-
-                // left -> top
+                int top = matrix[first][i];
                 matrix[first][i] = matrix[last-offset][first];
-
-                // bottom -> left
                 matrix[last-offset][first] = matrix[last][last - offset];
-
-                // right -> bottom
                 matrix[last][last - offset] = matrix[i][last];
-
-                // top -> right
-                matrix[i][last] = top; // right <- saved top
+                matrix[i][last] = top;
             }
         }
     }
