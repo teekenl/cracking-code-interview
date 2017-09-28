@@ -19,11 +19,8 @@ public class Answer {
             }
             current = current.next;
         }
-        while(current.next != null) {
-            previous = previous.next;
-            current = current.next;
-        }
-        return previous;
+        
+        return current;
     }
 
     public static void main(String args[]) {
