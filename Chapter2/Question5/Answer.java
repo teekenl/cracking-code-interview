@@ -10,6 +10,8 @@ public class Answer {
     public static Node FindMeetingPoint(Node head) {
         Node previous = head;
         Node current = head;
+
+        //Find the intersection point
         while (current.next != null) {
             previous = previous.next;
             current = current.next.next;
@@ -17,7 +19,8 @@ public class Answer {
                 break;
             }
         }
-        if (current.next == null) {
+
+        if (current.next == null) { // to check whether it has next node, if it is no , then no further loop is needed.
             return null;
         }
         previous = head;

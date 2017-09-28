@@ -19,7 +19,7 @@ public class Answer {
             }
             current = current.next;
         }
-        
+
         return current;
     }
 
