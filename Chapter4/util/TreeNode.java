@@ -1,5 +1,7 @@
 package Chapter4.util;
 
+import java.util.LinkedList;
+
 public class TreeNode {
     public int data;
     public TreeNode left;
@@ -7,6 +9,17 @@ public class TreeNode {
 
     public TreeNode(int data) {
         this.data = data;
+    }
+
+    public LinkedList<TreeNode> getAdjacent() {
+        LinkedList<TreeNode> adjacent = new LinkedList<TreeNode>();
+        if(this.left!=null) {
+            adjacent.add(this.left);
+        }
+        if(this.right!=null) {
+            adjacent.add(this.right);
+        }
+        return adjacent;
     }
 
     public String printNode() {
