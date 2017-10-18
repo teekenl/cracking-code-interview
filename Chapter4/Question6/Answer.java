@@ -8,7 +8,7 @@ public class Answer {
 
     }
 
-    public TreeNode inorderSucc(TreeNode n) {
+    public static TreeNode inorderSucc(TreeNode n) {
         if(n == null){
             return null;
         }
@@ -23,12 +23,11 @@ public class Answer {
                 previous = nParent;
                 nParent = n.parent;
             }
-            return nParent;
+            return nParent.parent;
         }
-        return n.parent;
     }
 
-    public TreeNode getLeftMostChild(TreeNode selectedNode) {
+    public static TreeNode getLeftMostChild(TreeNode selectedNode) {
         while(selectedNode.left!=null) {
             selectedNode = selectedNode.left;
         }
@@ -43,11 +42,13 @@ public class Answer {
         TreeNode node50 = new TreeNode(50);
         TreeNode node60 = new TreeNode(60);
         TreeNode node70 = new TreeNode(70);
+        rootNode.parent = null;
         rootNode.left = node10;
         rootNode.right = node60;
         node10.parent = rootNode;
         node60.parent = rootNode;
 
-        System.out.println("The next node of tree (in-order) is " + );
+        System.out.println("The node: " + rootNode.printNode());
+        System.out.println("The next node of tree (in-order) is " + inorderSucc(node60).data);
     }
 }
