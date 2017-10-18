@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class TreeNode {
     public int data;
+    public TreeNode parent;
     public TreeNode left;
     public TreeNode right;
 
