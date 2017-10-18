@@ -9,13 +9,13 @@ public class Answer{
     }
 
     // Check n is descendant of root in Binary Tree.
-    public static boolean isUnderRoot(TreeNode root, TreeNode n){
+    private static boolean isUnderRoot(TreeNode root, TreeNode n){
         if(root == null) return false;
         if(root == n) return true;
         return isUnderRoot(root.left, n) || isUnderRoot(root.right, n);
     }
 
-    public static TreeNode findAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    private static TreeNode findAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) return null;
         // if the subnode is already the root of BT
         if(root == p || root == q) return root;
@@ -24,7 +24,7 @@ public class Answer{
         return findAncestor((isUnderRoot(root.left,p)?root.left:root.right), p, q);
     }
 
-    public static TreeNode firstAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    private static TreeNode firstAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null) return null;
         // if one of child node is not descendant of Binary Tree
         if(!isUnderRoot(root,p) || !isUnderRoot(root,q)) return null;
@@ -44,6 +44,6 @@ public class Answer{
 
         System.out.println("The node is " + rootNode.printNode());
         System.out.println("The common ancestor for 10 and 20 is " +
-                    firstAncestor(rootNode,node10,node20));
+                    firstAncestor(rootNode,node10,node20).data);
     }
 }
